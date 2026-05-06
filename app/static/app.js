@@ -299,6 +299,7 @@ function renderAdminLayout() {
         <div class="admin-title"><h1>Admin Panel</h1><p class="meta">Manage Journal</p></div>
         <nav class="admin-menu">
           <button type="button" class="active"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></button>
+          <button type="button" data-new-post><span class="material-symbols-outlined">edit_note</span><span>New Draft</span></button>
           <button type="button" data-site-settings><span class="material-symbols-outlined">web</span><span>Site</span></button>
           <button type="button" data-site><span class="material-symbols-outlined">public</span><span>View Site</span></button>
           <button type="button" data-settings><span class="material-symbols-outlined">settings</span><span>Settings</span></button>
@@ -350,6 +351,7 @@ function renderSettingsLayout() {
         <div class="admin-title"><h1>Admin Panel</h1><p class="meta">Manage Journal</p></div>
         <nav class="admin-menu">
           <button type="button" data-dashboard><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></button>
+          <button type="button" data-new-post><span class="material-symbols-outlined">edit_note</span><span>New Draft</span></button>
           <button type="button" data-site-settings><span class="material-symbols-outlined">web</span><span>Site</span></button>
           <button type="button" data-site><span class="material-symbols-outlined">public</span><span>View Site</span></button>
           <button type="button" class="active"><span class="material-symbols-outlined">settings</span><span>Settings</span></button>
@@ -387,6 +389,7 @@ async function renderSiteSettingsLayout() {
         <div class="admin-title"><h1>Admin Panel</h1><p class="meta">Manage Journal</p></div>
         <nav class="admin-menu">
           <button type="button" data-dashboard><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></button>
+          <button type="button" data-new-post><span class="material-symbols-outlined">edit_note</span><span>New Draft</span></button>
           <button type="button" class="active"><span class="material-symbols-outlined">web</span><span>Site</span></button>
           <button type="button" data-site><span class="material-symbols-outlined">public</span><span>View Site</span></button>
           <button type="button" data-settings><span class="material-symbols-outlined">settings</span><span>Settings</span></button>
