@@ -152,7 +152,7 @@ function shell(content, active = "essays") {
     <footer id="about" class="footer">
       <div class="footer-brand">Journal</div>
       <div class="footer-links">
-        <a class="meta" href="/">Contact</a>
+        <a class="meta" href="https://www.linkedin.com/in/kulwisit-sakkittiphokhin-a426621b6" target="_blank" rel="noopener noreferrer">Contact</a>
       </div>
       <p class="meta">2026 Journal. Built for the written word.</p>
     </footer>
