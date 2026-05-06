@@ -142,8 +142,8 @@ function shell(content, active = "essays") {
       <nav class="nav">
         <a class="brand" href="/" data-link>Journal</a>
         <div class="nav-links">
-          <a class="nav-link ${active === "essays" ? "active" : ""}" href="/" data-link>Essays</a>
-          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link ${active === "essays" ? "active" : ""}" href="/" data-link data-scroll-top>Home</a>
+          <a class="nav-link" href="#about" data-scroll-about>About</a>
         </div>
         <a class="button primary" href="/admin" data-link>Admin</a>
       </nav>
@@ -299,7 +299,6 @@ function renderAdminLayout() {
         <div class="admin-title"><h1>Admin Panel</h1><p class="meta">Manage Journal</p></div>
         <nav class="admin-menu">
           <button type="button" class="active"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></button>
-          <button type="button" data-new-post><span class="material-symbols-outlined">edit_note</span><span>New Draft</span></button>
           <button type="button" data-site-settings><span class="material-symbols-outlined">web</span><span>Site</span></button>
           <button type="button" data-site><span class="material-symbols-outlined">public</span><span>View Site</span></button>
           <button type="button" data-settings><span class="material-symbols-outlined">settings</span><span>Settings</span></button>
@@ -351,7 +350,6 @@ function renderSettingsLayout() {
         <div class="admin-title"><h1>Admin Panel</h1><p class="meta">Manage Journal</p></div>
         <nav class="admin-menu">
           <button type="button" data-dashboard><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></button>
-          <button type="button" data-new-post><span class="material-symbols-outlined">edit_note</span><span>New Draft</span></button>
           <button type="button" data-site-settings><span class="material-symbols-outlined">web</span><span>Site</span></button>
           <button type="button" data-site><span class="material-symbols-outlined">public</span><span>View Site</span></button>
           <button type="button" class="active"><span class="material-symbols-outlined">settings</span><span>Settings</span></button>
@@ -389,7 +387,6 @@ async function renderSiteSettingsLayout() {
         <div class="admin-title"><h1>Admin Panel</h1><p class="meta">Manage Journal</p></div>
         <nav class="admin-menu">
           <button type="button" data-dashboard><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></button>
-          <button type="button" data-new-post><span class="material-symbols-outlined">edit_note</span><span>New Draft</span></button>
           <button type="button" class="active"><span class="material-symbols-outlined">web</span><span>Site</span></button>
           <button type="button" data-site><span class="material-symbols-outlined">public</span><span>View Site</span></button>
           <button type="button" data-settings><span class="material-symbols-outlined">settings</span><span>Settings</span></button>
@@ -468,6 +465,28 @@ async function route() {
 }
 
 document.addEventListener("click", async (event) => {
+  const aboutLink = event.target.closest("[data-scroll-about]");
+  if (aboutLink) {
+    event.preventDefault();
+    if (window.location.pathname !== "/") {
+      history.pushState({}, "", "/#about");
+      await route();
+    }
+    document.querySelector("#about")?.scrollIntoView({ behavior: "smooth", block: "end" });
+    return;
+  }
+
+  const topLink = event.target.closest("[data-scroll-top]");
+  if (topLink) {
+    event.preventDefault();
+    if (window.location.pathname !== "/") {
+      history.pushState({}, "", "/");
+      await route();
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+
   const link = event.target.closest("[data-link]");
   if (link) {
     const href = link.getAttribute("href");

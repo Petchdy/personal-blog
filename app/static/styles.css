@@ -50,7 +50,7 @@ img { display: block; max-width: 100%; }
 .display { font-size: clamp(3.1rem, 7vw, 4.5rem); font-weight: 400; line-height: 1.05; letter-spacing: 0; margin: 0 0 16px; }
 .dek { color: var(--muted); font-size: 1.25rem; line-height: 1.8; margin: 0; }
 .hero-image { aspect-ratio: 21 / 9; background: var(--surface-high); overflow: hidden; }
-.hero-image img, .cover-frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(0.94); }
+.hero-image img, .cover-frame img { width: 100%; height: 100%; object-fit: cover; }
 
 .feed { max-width: var(--article); margin: 0 auto; padding: 0 24px 120px; }
 .post-row { border-top: 1px solid color-mix(in srgb, var(--line) 55%, transparent); padding: 72px 0; cursor: pointer; }
@@ -87,7 +87,7 @@ figcaption { color: var(--muted); font-family: Inter, system-ui, sans-serif; fon
 .article-body blockquote { border-left: 2px solid var(--ink); font-size: 1.6rem; font-style: italic; line-height: 1.45; margin: 44px 0; padding-left: 24px; }
 .article-body pre { background: var(--surface-high); border: 1px solid var(--line); overflow-x: auto; padding: 20px; }
 .article-body code { font-family: Consolas, monospace; font-size: 0.9rem; }
-.article-body img { margin: 40px 0 10px; width: 100%; filter: grayscale(1); }
+.article-body img { margin: 40px 0 10px; width: 100%; }
 .article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 72px; }
 
 .login-shell { min-height: 100vh; display: grid; place-items: center; padding: 48px 24px; }
